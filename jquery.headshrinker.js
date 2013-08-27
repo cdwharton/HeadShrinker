@@ -1,5 +1,5 @@
 /**
- * jQuery HeadShrinker v1.0.0
+ * jQuery HeadShrinker v1.0.1
  * Copyright (C) 2013 Chris Wharton (chris@weare2ndfloor.com)
  *
  * This program is free software: you can redistribute it and/or modify
@@ -221,7 +221,7 @@
 						showNav();
 						jQuery('body')
 						.animate({
-							marginTop: shrinkHeight + "px"
+							marginTop: shrinkMenuTop
 							}, 500);
 					} else {
 						target.show();

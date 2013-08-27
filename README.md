@@ -1,4 +1,4 @@
-HeadShrinker v1.0.0
+HeadShrinker v1.0.1
 =====
 
 For shrinking your website header, not your actual head!
