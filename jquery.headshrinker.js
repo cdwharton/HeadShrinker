@@ -1,7 +1,12 @@
-/**
- * jQuery HeadShrinker v1.0.1
- * Copyright (C) 2013 Chris Wharton (chris@weare2ndfloor.com)
+/*! *******
  *
+ * jQuery HeadShrinker v1.0.2
+ * Copyright (C) 2013 Chris Wharton (chris@weare2ndfloor.com)
+ * View the more at https://github.com/weare2ndfloor/HeadShrinker
+ *
+ ********* */
+ 
+/*
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
@@ -18,8 +23,6 @@
  * 
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://gnu.org/licenses/>.
- *
- * View the demo at http://weare2ndfloor.com/headshrinker
  *
  */
 (function ($) {
@@ -67,12 +70,13 @@
 				headerHeight = jQuery('header').outerHeight(),
 				windowWidth = window.innerWidth || document.documentElement.clientWidth;
 				
-				
 				// use window load to grab sizes (this doesn't work on document.ready)
 				$window.load(function() {
-					
+				
 					// grab image size and divide it by option
-					jQuery(' img' , headShrink).height( jQuery( 'img' , headShrink).height()/shrinkBy );
+					var imgWidth = jQuery( 'img' , headShrink).outerWidth()/shrinkBy;
+					var imgHeight = jQuery( 'img' , headShrink).outerHeight()/shrinkBy;
+					jQuery(' img' , headShrink).attr( "width" , imgWidth ).attr( "height" , imgHeight );
 
 					// grab top/bottom margins & paddings and resize
 					var paddingTopMain = jQuery(headShrink).css( 'padding-top').replace( 'px' , '' ).replace( 'em' , '' );
@@ -144,7 +148,7 @@
 					
 					headShrink.css('width', windowWidth);
 				
-					if( windowTop >= shrinkHeight - 50 ) {
+					if( windowTop >= shrinkHeight - 25 ) {
 						showNav();
 					} else {
 						hideNav();
